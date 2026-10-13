@@ -4,488 +4,616 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INFINITE CLICKS | Web & App Development Company</title>
+  <title>INFINITE CLICKS | Web &amp; App Development Studio</title>
   <meta name="description"
-      content="Professional web and app development company creating scalable digital solutions for businesses of all sizes.">
-  <meta property="og:title" content="INFINITE CLICKS | Web & App Development">
-  <meta property="og:description" content="Empowering businesses through web and app development solutions that scale.">
+      content="Infinite Clicks is a Cape Town web and app development studio engineering scalable, high-performance digital products for startups and enterprises.">
+  <meta property="og:title" content="INFINITE CLICKS | Web &amp; App Development Studio">
+  <meta property="og:description" content="Limitless potential. Engineered with precision — websites, apps and digital products built to scale.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://infiniteclicks.dev">
-  <link rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>∞</text></svg>">
-  <meta name="theme-color" content="#1E3A8A">
+  <meta property="og:url" content="https://infiniteclicks.co.za">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <meta name="theme-color" content="#060A18">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #1E3A8A;
-      --secondary: #0F172A;
-      --accent-start: #00C6FB;
-      --accent-end: #005BEA;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#060A18',
+            'ink-soft': '#0A0F20',
+            surface: '#10182B',
+            'surface-2': '#172036',
+            mist: '#A9B7CC',
+            smoke: '#6E7B93',
+            ivory: '#F3F6FB',
+            silver: '#CBD5E1',
+            'accent-cyan': '#22D3EE',
+            'accent-blue': '#2F6FED',
+          },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'ui-sans-serif', 'sans-serif'],
+            sans: ['"Inter"', 'ui-sans-serif', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-sm': '0 0 16px rgba(34, 211, 238, 0.25)',
+            'glow-md': '0 0 32px rgba(34, 211, 238, 0.30)',
+            'glow-lg': '0 25px 60px -15px rgba(47, 111, 237, 0.45)',
+            card: '0 10px 30px -10px rgba(2, 6, 23, 0.6)',
+            'card-hover': '0 20px 45px -12px rgba(2, 6, 23, 0.75)',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', sans-serif;
+      background-color: #060A18;
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
 
-    .gradient-text {
-      background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    ::selection {
+      background-color: #22D3EE;
+      color: #060A18;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid #22D3EE;
+      outline-offset: 2px;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #060A18;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E293B;
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2F6FED;
+    }
+
+    .text-gradient {
+      background: linear-gradient(90deg, #22D3EE, #2F6FED);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
-    .gradient-bg {
-      background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+    .grid-overlay {
+      background-image:
+        linear-gradient(rgba(34, 211, 238, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 211, 238, 0.07) 1px, transparent 1px);
+      background-size: 44px 44px;
+      -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
+      mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
     }
 
-    .hero-bg {
-      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-        url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgzMCwgNTgsIDEzOCwgMC4wNSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
-      background-size: cover;
+    /* Fixed, full-viewport WebGL layer. Sits behind every section; opaque
+       section backgrounds occlude it, and the transparent divider strips
+       between sections let it show through as the page scrolls. */
+    #webgl-bg {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
     }
 
-    .nav-scrolled {
-      background-color: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-
-    .portfolio-item:hover .portfolio-overlay {
-      opacity: 1;
-      transform: translateY(0);
+    .tilt-card {
+      will-change: transform;
     }
 
     .animate-fade-in {
       animation: fadeIn 1s ease-in-out;
     }
-
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .animate-float {
       animation: float 6s ease-in-out infinite;
     }
-
     @keyframes float {
-      0% {
-        transform: translateY(0px);
-      }
-
-      50% {
-        transform: translateY(-20px);
-      }
-
-      100% {
-        transform: translateY(0px);
-      }
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-14px); }
+      100% { transform: translateY(0px); }
     }
 
     .animate-pulse-slow {
-      animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      animation: pulseSlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.7;
-      }
+    @keyframes pulseSlow {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
     }
 
     .loading-spinner {
-      width: 24px;
-      height: 24px;
-      border: 3px solid rgba(255, 255, 255, 0.3);
+      width: 18px;
+      height: 18px;
+      border: 2.5px solid rgba(6, 10, 24, 0.25);
       border-radius: 50%;
-      border-top-color: white;
-      animation: spin 1s ease-in-out infinite;
+      border-top-color: #060A18;
+      animation: spin 0.8s ease-in-out infinite;
     }
-
     @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
+      to { transform: rotate(360deg); }
     }
   </style>
 </head>
 
-<body class="bg-white text-gray-800">
+<body class="bg-ink text-mist font-sans antialiased">
+
+  <canvas id="webgl-bg" aria-hidden="true"></canvas>
+
   <!-- Header/Navigation -->
   <header id="header" class="fixed w-full z-50 transition-all duration-300">
-    <div class="container mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        <a href="#" class="text-2xl font-bold text-gray-800">
-          <span class="gradient-text">INFINITE CLICKS</span>
+    <div class="container mx-auto px-6">
+      <div class="flex items-center justify-between py-4">
+        <a href="#home" class="flex items-center">
+          <img src="assets/img/logo.png" alt="Infinite Clicks" class="h-9 sm:h-10 w-auto">
         </a>
 
-        <nav class="hidden md:flex space-x-8">
-          <a href="#home" class="text-gray-800 hover:text-blue-600 transition">Home</a>
-          <a href="#services" class="text-gray-800 hover:text-blue-600 transition">Services</a>
-          <a href="#portfolio" class="text-gray-800 hover:text-blue-600 transition">Portfolio</a>
-          <a href="#about" class="text-gray-800 hover:text-blue-600 transition">About</a>
-          <a href="#contact" class="text-gray-800 hover:text-blue-600 transition">Contact</a>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#home" class="text-sm font-medium text-mist hover:text-ivory transition-colors duration-200">Home</a>
+          <a href="#services" class="text-sm font-medium text-mist hover:text-ivory transition-colors duration-200">Services</a>
+          <a href="#portfolio" class="text-sm font-medium text-mist hover:text-ivory transition-colors duration-200">Work</a>
+          <a href="#about" class="text-sm font-medium text-mist hover:text-ivory transition-colors duration-200">About</a>
+          <a href="#contact" class="text-sm font-medium text-mist hover:text-ivory transition-colors duration-200">Contact</a>
         </nav>
 
-        <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <a href="#contact"
+            class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-accent-cyan to-accent-blue text-ink font-display font-semibold text-xs tracking-wide uppercase shadow-glow-sm hover:shadow-glow-md hover:-translate-y-0.5 transition-all duration-300">
+          Start a Project
+        </a>
+
+        <button id="mobile-menu-button" class="md:hidden text-ivory focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
+          <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6 shadow-lg">
+    <div id="mobile-menu" class="hidden md:hidden bg-ink-soft border-t border-white/5 py-4 px-6">
       <div class="flex flex-col space-y-4">
-        <a href="#home" class="text-gray-800 hover:text-blue-600 transition">Home</a>
-        <a href="#services" class="text-gray-800 hover:text-blue-600 transition">Services</a>
-        <a href="#portfolio" class="text-gray-800 hover:text-blue-600 transition">Portfolio</a>
-        <a href="#about" class="text-gray-800 hover:text-blue-600 transition">About</a>
-        <a href="#contact" class="text-gray-800 hover:text-blue-600 transition">Contact</a>
+        <a href="#home" class="text-sm font-medium text-mist hover:text-ivory transition">Home</a>
+        <a href="#services" class="text-sm font-medium text-mist hover:text-ivory transition">Services</a>
+        <a href="#portfolio" class="text-sm font-medium text-mist hover:text-ivory transition">Work</a>
+        <a href="#about" class="text-sm font-medium text-mist hover:text-ivory transition">About</a>
+        <a href="#contact" class="text-sm font-medium text-mist hover:text-ivory transition">Contact</a>
+        <a href="#contact"
+            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-accent-cyan to-accent-blue text-ink font-display font-semibold text-xs tracking-wide uppercase">
+          Start a Project
+        </a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero-bg min-h-screen flex items-center pt-20">
-    <div class="container mx-auto px-6 py-20 md:py-32">
-      <div class="flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-12 md:mb-0 animate-fade-in">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            We Build <span class="gradient-text">Infinite Digital</span> Possibilities
+  <main class="relative z-10">
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-32 pb-24 overflow-hidden">
+      <div class="absolute inset-0 grid-overlay pointer-events-none"></div>
+      <div class="absolute -top-32 -right-20 w-[28rem] h-[28rem] bg-accent-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 -left-20 w-96 h-96 bg-accent-blue/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="container relative mx-auto px-6">
+        <div class="max-w-2xl animate-fade-in">
+          <span class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-[0.2em] text-accent-cyan mb-6">
+            <span class="h-px w-8 bg-accent-cyan"></span>
+            Web &amp; App Development Studio
+          </span>
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight text-ivory mb-6">
+            Limitless Potential.<br>
+            <span class="text-gradient">Engineered</span> With Precision.
           </h1>
-          <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
-            Empowering businesses through web and app development solutions that scale.
+          <p class="text-lg text-mist mb-10 max-w-lg leading-relaxed">
+            Infinite Clicks designs and builds high-performance websites, apps and digital products —
+            crafted with the precision of engineers and the eye of a design studio.
           </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#contact"
+                class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-accent-cyan to-accent-blue text-ink font-display font-semibold text-sm tracking-wide uppercase shadow-glow-md hover:shadow-glow-lg hover:-translate-y-0.5 transition-all duration-300">
+              Start Your Build
+            </a>
+            <a href="#portfolio"
+                class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-silver/25 text-ivory font-display font-semibold text-sm tracking-wide uppercase hover:border-accent-cyan hover:text-accent-cyan hover:bg-accent-cyan/5 transition-all duration-300">
+              View Our Work
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating stat badge, overlaid on the 3D scene -->
+      <div class="hidden lg:flex absolute bottom-28 right-12 xl:right-24 items-center gap-3 bg-ink/70 backdrop-blur-sm border border-white/10 rounded-2xl px-5 py-4 shadow-card animate-fade-in">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-cyan/20 to-accent-blue/20 border border-accent-cyan/20 flex items-center justify-center text-accent-cyan">
+          <i class="fas fa-rocket"></i>
+        </div>
+        <div>
+          <p class="font-display font-bold text-ivory text-sm leading-none mb-1">50+ Projects</p>
+          <p class="text-xs text-smoke">Delivered across web &amp; mobile</p>
+        </div>
+      </div>
+
+      <!-- Scroll cue -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-smoke">
+        <span class="text-[11px] font-display uppercase tracking-[0.2em]">Scroll to Explore</span>
+        <i class="fas fa-chevron-down text-accent-cyan animate-float" style="animation-duration: 2s;"></i>
+      </div>
+    </section>
+
+    <div class="relative h-16 md:h-28" aria-hidden="true"></div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-ink-soft">
+      <div class="container mx-auto px-6">
+        <div class="reveal-3d text-center max-w-2xl mx-auto mb-16">
+          <span class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-[0.2em] text-accent-cyan mb-4 justify-center">
+            <span class="h-px w-8 bg-accent-cyan"></span>
+            What We Do
+            <span class="h-px w-8 bg-accent-cyan"></span>
+          </span>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-ivory mb-4">Services Built to <span class="text-gradient">Scale</span></h2>
+          <p class="text-mist">End-to-end digital capability, from the first wireframe to production deployment.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Service 1 -->
+          <div class="group tilt-card reveal-3d bg-surface/60 border border-white/5 rounded-2xl p-8 hover:border-accent-cyan/30 hover:shadow-card-hover transition-colors duration-300">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-cyan/15 to-accent-blue/15 border border-accent-cyan/20 flex items-center justify-center text-2xl text-accent-cyan mb-6 group-hover:shadow-glow-sm transition-shadow duration-300">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="font-display text-xl font-semibold text-ivory mb-3">Web Development</h3>
+            <p class="text-mist leading-relaxed">Fast, responsive websites and e-commerce platforms built on modern frameworks, tuned for performance and search visibility.</p>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="group tilt-card reveal-3d bg-surface/60 border border-white/5 rounded-2xl p-8 hover:border-accent-cyan/30 hover:shadow-card-hover transition-colors duration-300">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-cyan/15 to-accent-blue/15 border border-accent-cyan/20 flex items-center justify-center text-2xl text-accent-cyan mb-6 group-hover:shadow-glow-sm transition-shadow duration-300">
+              <i class="fas fa-mobile-screen-button"></i>
+            </div>
+            <h3 class="font-display text-xl font-semibold text-ivory mb-3">App Development</h3>
+            <p class="text-mist leading-relaxed">Native and cross-platform mobile apps for iOS and Android, designed for smooth, reliable everyday use.</p>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="group tilt-card reveal-3d bg-surface/60 border border-white/5 rounded-2xl p-8 hover:border-accent-cyan/30 hover:shadow-card-hover transition-colors duration-300">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-cyan/15 to-accent-blue/15 border border-accent-cyan/20 flex items-center justify-center text-2xl text-accent-cyan mb-6 group-hover:shadow-glow-sm transition-shadow duration-300">
+              <i class="fas fa-paintbrush"></i>
+            </div>
+            <h3 class="font-display text-xl font-semibold text-ivory mb-3">UI/UX Design</h3>
+            <p class="text-mist leading-relaxed">Interfaces people enjoy using — researched, wireframed and tested before a single line of code is written.</p>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="group tilt-card reveal-3d bg-surface/60 border border-white/5 rounded-2xl p-8 hover:border-accent-cyan/30 hover:shadow-card-hover transition-colors duration-300">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-cyan/15 to-accent-blue/15 border border-accent-cyan/20 flex items-center justify-center text-2xl text-accent-cyan mb-6 group-hover:shadow-glow-sm transition-shadow duration-300">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3 class="font-display text-xl font-semibold text-ivory mb-3">API &amp; Backend</h3>
+            <p class="text-mist leading-relaxed">Secure, scalable infrastructure and APIs that keep your product fast and reliable as you grow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative h-16 md:h-28" aria-hidden="true"></div>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-ink">
+      <div class="container mx-auto px-6">
+        <div class="reveal-3d text-center max-w-2xl mx-auto mb-16">
+          <span class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-[0.2em] text-accent-cyan mb-4 justify-center">
+            <span class="h-px w-8 bg-accent-cyan"></span>
+            Selected Work
+            <span class="h-px w-8 bg-accent-cyan"></span>
+          </span>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-ivory mb-4">Projects We're <span class="text-gradient">Proud Of</span></h2>
+          <p class="text-mist">A look at recent work that showcases our range and attention to detail.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div class="group tilt-card reveal-3d relative rounded-2xl overflow-hidden border border-white/5 shadow-card">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="E-commerce Platform" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent opacity-0 group-hover:opacity-100 flex flex-col justify-end p-6 transition-all duration-300">
+              <span class="inline-block w-max text-[11px] font-display font-semibold uppercase tracking-wider text-accent-cyan bg-accent-cyan/10 border border-accent-cyan/20 rounded-full px-3 py-1 mb-3">E-commerce</span>
+              <h3 class="text-ivory text-xl font-display font-semibold mb-2">E-commerce Platform</h3>
+              <p class="text-mist text-sm mb-4">A high-performance online store with custom payment integration.</p>
+              <button class="text-ivory border border-white/30 px-4 py-2 rounded-full text-sm hover:bg-ivory hover:text-ink transition w-max">View Project</button>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="group tilt-card reveal-3d relative rounded-2xl overflow-hidden border border-white/5 shadow-card">
+            <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Fitness App" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent opacity-0 group-hover:opacity-100 flex flex-col justify-end p-6 transition-all duration-300">
+              <span class="inline-block w-max text-[11px] font-display font-semibold uppercase tracking-wider text-accent-cyan bg-accent-cyan/10 border border-accent-cyan/20 rounded-full px-3 py-1 mb-3">Mobile App</span>
+              <h3 class="text-ivory text-xl font-display font-semibold mb-2">Fitness Tracker App</h3>
+              <p class="text-mist text-sm mb-4">Cross-platform mobile application with health data synchronization.</p>
+              <button class="text-ivory border border-white/30 px-4 py-2 rounded-full text-sm hover:bg-ivory hover:text-ink transition w-max">View Project</button>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="group tilt-card reveal-3d relative rounded-2xl overflow-hidden border border-white/5 shadow-card">
+            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+                alt="Corporate Website" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent opacity-0 group-hover:opacity-100 flex flex-col justify-end p-6 transition-all duration-300">
+              <span class="inline-block w-max text-[11px] font-display font-semibold uppercase tracking-wider text-accent-cyan bg-accent-cyan/10 border border-accent-cyan/20 rounded-full px-3 py-1 mb-3">Corporate Site</span>
+              <h3 class="text-ivory text-xl font-display font-semibold mb-2">Corporate Website</h3>
+              <p class="text-mist text-sm mb-4">Modern responsive website with CMS integration for easy content management.</p>
+              <button class="text-ivory border border-white/30 px-4 py-2 rounded-full text-sm hover:bg-ivory hover:text-ink transition w-max">View Project</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-3d text-center mt-14">
           <a href="#contact"
-              class="gradient-bg text-white px-8 py-3 rounded-full font-medium inline-block hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-            Let's Build Together
+              class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-silver/25 text-ivory font-display font-semibold text-sm tracking-wide uppercase hover:border-accent-cyan hover:text-accent-cyan hover:bg-accent-cyan/5 transition-all duration-300">
+            View All Projects
           </a>
         </div>
-
-        <div class="md:w-1/2 relative">
-          <div class="relative">
-            <div class="w-full h-full bg-blue-50 rounded-2xl p-8 relative z-10">
-              <div class="grid grid-cols-2 gap-4">
-                <div class="bg-white p-6 rounded-xl shadow-md animate-float">
-                  <i class="fas fa-code text-3xl mb-4 gradient-text"></i>
-                  <h3 class="font-bold text-gray-800">Web</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md animate-float" style="animation-delay: 0.5s;">
-                  <i class="fas fa-mobile-alt text-3xl mb-4 gradient-text"></i>
-                  <h3 class="font-bold text-gray-800">Mobile</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md animate-float" style="animation-delay: 1s;">
-                  <i class="fas fa-paint-brush text-3xl mb-4 gradient-text"></i>
-                  <h3 class="font-bold text-gray-800">Design</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md animate-float" style="animation-delay: 1.5s;">
-                  <i class="fas fa-server text-3xl mb-4 gradient-text"></i>
-                  <h3 class="font-bold text-gray-800">Backend</h3>
-                </div>
-              </div>
-            </div>
-            <div class="absolute -top-4 -left-4 w-full h-full border-2 border-blue-200 rounded-2xl animate-pulse-slow">
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Services Section -->
-  <section id="services" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our <span class="gradient-text">Services</span></h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive digital solutions tailored to your business needs</p>
-      </div>
+    <div class="relative h-16 md:h-28" aria-hidden="true"></div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Service 1 -->
-        <div
-            class="service-card bg-white p-8 rounded-xl shadow-md transition-all duration-300 hover:border-blue-500 border border-transparent">
-          <div class="gradient-text text-4xl mb-6">
-            <i class="fas fa-code"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Web Development</h3>
-          <p class="text-gray-600">Custom websites, portals, and eCommerce systems built with modern technologies for
-            optimal performance.</p>
-        </div>
-
-        <!-- Service 2 -->
-        <div
-            class="service-card bg-white p-8 rounded-xl shadow-md transition-all duration-300 hover:border-blue-500 border border-transparent">
-          <div class="gradient-text text-4xl mb-6">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">App Development</h3>
-          <p class="text-gray-600">Android, iOS, and hybrid mobile apps designed for seamless user experiences across
-            all devices.</p>
-        </div>
-
-        <!-- Service 3 -->
-        <div
-            class="service-card bg-white p-8 rounded-xl shadow-md transition-all duration-300 hover:border-blue-500 border border-transparent">
-          <div class="gradient-text text-4xl mb-6">
-            <i class="fas fa-paint-brush"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">UI/UX Design</h3>
-          <p class="text-gray-600">Intuitive and engaging digital experiences crafted through user-centered design
-            principles.</p>
-        </div>
-
-        <!-- Service 4 -->
-        <div
-            class="service-card bg-white p-8 rounded-xl shadow-md transition-all duration-300 hover:border-blue-500 border border-transparent">
-          <div class="gradient-text text-4xl mb-6">
-            <i class="fas fa-server"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3">API & Backend</h3>
-          <p class="text-gray-600">Secure and scalable architectures that power your applications with reliability and
-            efficiency.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our <span class="gradient-text">Work</span></h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Explore our recent projects that showcase our expertise and
-          creativity</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Project 1 -->
-        <div class="portfolio-item relative rounded-xl overflow-hidden shadow-md">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="E-commerce Platform" class="w-full h-64 object-cover">
-          <div
-              class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 flex flex-col justify-end p-6 transition-all duration-300 transform translate-y-10">
-            <h3 class="text-white text-xl font-bold mb-2">E-commerce Platform</h3>
-            <p class="text-gray-200 mb-4">A high-performance online store with custom payment integration.</p>
-            <button
-                class="text-white border border-white px-4 py-2 rounded-full hover:bg-white hover:text-blue-600 transition w-max">View
-              Project</button>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="portfolio-item relative rounded-xl overflow-hidden shadow-md">
-          <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="Fitness App" class="w-full h-64 object-cover">
-          <div
-              class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 flex flex-col justify-end p-6 transition-all duration-300 transform translate-y-10">
-            <h3 class="text-white text-xl font-bold mb-2">Fitness Tracker App</h3>
-            <p class="text-gray-200 mb-4">Cross-platform mobile application with health data synchronization.</p>
-            <button
-                class="text-white border border-white px-4 py-2 rounded-full hover:bg-white hover:text-blue-600 transition w-max">View
-              Project</button>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="portfolio-item relative rounded-xl overflow-hidden shadow-md">
-          <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
-              alt="Corporate Website" class="w-full h-64 object-cover">
-          <div
-              class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 flex flex-col justify-end p-6 transition-all duration-300 transform translate-y-10">
-            <h3 class="text-white text-xl font-bold mb-2">Corporate Website</h3>
-            <p class="text-gray-200 mb-4">Modern responsive website with CMS integration for easy content management.
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-ink-soft">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+          <div class="reveal-3d lg:w-1/2">
+            <span class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-[0.2em] text-accent-cyan mb-4">
+              <span class="h-px w-8 bg-accent-cyan"></span>
+              Who We Are
+            </span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-ivory mb-6">About <span class="text-gradient">Infinite Clicks</span></h2>
+            <p class="text-mist leading-relaxed mb-8 max-w-xl">
+              We're a Cape Town-based team of developers and designers who turn ambitious ideas into
+              scalable digital products. From early-stage startups to established enterprises, we
+              partner closely with our clients to engineer growth.
             </p>
-            <button
-                class="text-white border border-white px-4 py-2 rounded-full hover:bg-white hover:text-blue-600 transition w-max">View
-              Project</button>
+
+            <div class="grid grid-cols-3 gap-4 max-w-md">
+              <div class="bg-surface/60 border border-white/5 p-4 rounded-2xl text-center">
+                <div class="text-2xl text-accent-cyan mb-2">
+                  <i class="fas fa-lightbulb"></i>
+                </div>
+                <h4 class="font-display font-semibold text-ivory text-sm">Innovation</h4>
+              </div>
+              <div class="bg-surface/60 border border-white/5 p-4 rounded-2xl text-center">
+                <div class="text-2xl text-accent-cyan mb-2">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h4 class="font-display font-semibold text-ivory text-sm">Teamwork</h4>
+              </div>
+              <div class="bg-surface/60 border border-white/5 p-4 rounded-2xl text-center">
+                <div class="text-2xl text-accent-cyan mb-2">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h4 class="font-display font-semibold text-ivory text-sm">Results</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal-3d tilt-card lg:w-1/2 w-full">
+            <div class="bg-surface/60 border border-white/5 p-8 rounded-3xl shadow-card">
+              <h3 class="font-display text-xl font-semibold text-ivory mb-6">Our Expertise</h3>
+              <div class="space-y-6">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="font-medium text-ivory text-sm">Web Development</span>
+                    <span class="text-accent-cyan text-sm font-semibold">95%</span>
+                  </div>
+                  <div class="w-full bg-ink-soft rounded-full h-2">
+                    <div class="bg-gradient-to-r from-accent-cyan to-accent-blue h-2 rounded-full shadow-glow-sm" style="width: 95%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="font-medium text-ivory text-sm">Mobile Development</span>
+                    <span class="text-accent-cyan text-sm font-semibold">90%</span>
+                  </div>
+                  <div class="w-full bg-ink-soft rounded-full h-2">
+                    <div class="bg-gradient-to-r from-accent-cyan to-accent-blue h-2 rounded-full shadow-glow-sm" style="width: 90%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="font-medium text-ivory text-sm">UI/UX Design</span>
+                    <span class="text-accent-cyan text-sm font-semibold">92%</span>
+                  </div>
+                  <div class="w-full bg-ink-soft rounded-full h-2">
+                    <div class="bg-gradient-to-r from-accent-cyan to-accent-blue h-2 rounded-full shadow-glow-sm" style="width: 92%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="font-medium text-ivory text-sm">Backend Development</span>
+                    <span class="text-accent-cyan text-sm font-semibold">88%</span>
+                  </div>
+                  <div class="w-full bg-ink-soft rounded-full h-2">
+                    <div class="bg-gradient-to-r from-accent-cyan to-accent-blue h-2 rounded-full shadow-glow-sm" style="width: 88%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="text-center mt-12">
-        <button
-            class="gradient-bg text-white px-8 py-3 rounded-full font-medium inline-block hover:shadow-lg transition">
-          View All Projects
-        </button>
+    <div class="relative h-16 md:h-28" aria-hidden="true"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-ink">
+      <div class="container mx-auto px-6">
+        <div class="reveal-3d text-center max-w-2xl mx-auto mb-16">
+          <span class="inline-flex items-center gap-2 text-xs font-display font-semibold uppercase tracking-[0.2em] text-accent-cyan mb-4 justify-center">
+            <span class="h-px w-8 bg-accent-cyan"></span>
+            Get In Touch
+            <span class="h-px w-8 bg-accent-cyan"></span>
+          </span>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-ivory mb-4">Let's Build Something <span class="text-gradient">Infinite</span></h2>
+          <p class="text-mist">Tell us about your project and we'll get back to you within one business day.</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto">
+          <div class="reveal-3d md:w-1/2">
+            <form id="contact-form" class="space-y-6">
+              <div>
+                <label for="name" class="block text-ivory text-sm font-medium mb-2">Your Name</label>
+                <input type="text" id="name" name="name"
+                    class="w-full px-4 py-3 bg-surface/60 border border-white/10 rounded-xl text-ivory placeholder-smoke focus:outline-none focus:ring-2 focus:ring-accent-cyan/30 focus:border-accent-cyan transition"
+                    placeholder="Jane Doe" required>
+              </div>
+
+              <div>
+                <label for="email" class="block text-ivory text-sm font-medium mb-2">Email Address</label>
+                <input type="email" id="email" name="email"
+                    class="w-full px-4 py-3 bg-surface/60 border border-white/10 rounded-xl text-ivory placeholder-smoke focus:outline-none focus:ring-2 focus:ring-accent-cyan/30 focus:border-accent-cyan transition"
+                    placeholder="jane@company.com" required>
+              </div>
+
+              <div>
+                <label for="message" class="block text-ivory text-sm font-medium mb-2">Your Message</label>
+                <textarea id="message" name="message" rows="5"
+                    class="w-full px-4 py-3 bg-surface/60 border border-white/10 rounded-xl text-ivory placeholder-smoke focus:outline-none focus:ring-2 focus:ring-accent-cyan/30 focus:border-accent-cyan transition resize-none"
+                    placeholder="Tell us a little about your project..." required></textarea>
+              </div>
+
+              <button type="submit" id="submit-btn"
+                  class="w-full inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-accent-cyan to-accent-blue text-ink font-display font-semibold text-sm tracking-wide uppercase shadow-glow-md hover:shadow-glow-lg transition-all duration-300 disabled:opacity-70">
+                <span id="submit-text">Send Message</span>
+                <div id="submit-spinner" class="loading-spinner hidden"></div>
+              </button>
+
+              <p id="form-feedback" class="hidden text-sm font-medium" role="status"></p>
+            </form>
+          </div>
+
+          <div class="reveal-3d tilt-card md:w-1/2">
+            <div class="bg-surface/60 border border-white/5 p-8 rounded-3xl h-full">
+              <h3 class="font-display text-xl font-semibold text-ivory mb-6">Contact Information</h3>
+
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-cyan/20 to-accent-blue/20 border border-accent-cyan/20 flex items-center justify-center text-accent-cyan flex-shrink-0">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-display font-semibold text-ivory text-sm mb-1">Email</h4>
+                    <a href="mailto:contact@infiniteclicks.co.za" class="text-mist hover:text-accent-cyan transition">contact@infiniteclicks.co.za</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-cyan/20 to-accent-blue/20 border border-accent-cyan/20 flex items-center justify-center text-accent-cyan flex-shrink-0">
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-display font-semibold text-ivory text-sm mb-1">Phone</h4>
+                    <a href="tel:+27631875397" class="text-mist hover:text-accent-cyan transition">+27 63 187 5397</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-cyan/20 to-accent-blue/20 border border-accent-cyan/20 flex items-center justify-center text-accent-cyan flex-shrink-0">
+                    <i class="fas fa-location-dot"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-display font-semibold text-ivory text-sm mb-1">Location</h4>
+                    <p class="text-mist">Cape Town, South Africa</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative h-12 md:h-20" aria-hidden="true"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 bg-ink-soft border-t border-white/5 pt-16 pb-8">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div class="md:col-span-2">
+          <img src="assets/img/logo.png" alt="Infinite Clicks" class="h-9 w-auto mb-4">
+          <p class="text-mist max-w-xs leading-relaxed">Limitless potential. Engineered with precision.</p>
+          <div class="flex gap-3 mt-6">
+            <a href="#" aria-label="X (Twitter)" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-mist hover:text-accent-cyan hover:border-accent-cyan/40 transition"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-mist hover:text-accent-cyan hover:border-accent-cyan/40 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="GitHub" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-mist hover:text-accent-cyan hover:border-accent-cyan/40 transition"><i class="fa-brands fa-github"></i></a>
+            <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-mist hover:text-accent-cyan hover:border-accent-cyan/40 transition"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-display font-semibold text-ivory text-sm uppercase tracking-wider mb-4">Navigate</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#home" class="text-mist hover:text-accent-cyan transition">Home</a></li>
+            <li><a href="#services" class="text-mist hover:text-accent-cyan transition">Services</a></li>
+            <li><a href="#portfolio" class="text-mist hover:text-accent-cyan transition">Work</a></li>
+            <li><a href="#about" class="text-mist hover:text-accent-cyan transition">About</a></li>
+            <li><a href="#contact" class="text-mist hover:text-accent-cyan transition">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-display font-semibold text-ivory text-sm uppercase tracking-wider mb-4">Services</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#services" class="text-mist hover:text-accent-cyan transition">Web Development</a></li>
+            <li><a href="#services" class="text-mist hover:text-accent-cyan transition">App Development</a></li>
+            <li><a href="#services" class="text-mist hover:text-accent-cyan transition">UI/UX Design</a></li>
+            <li><a href="#services" class="text-mist hover:text-accent-cyan transition">API &amp; Backend</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-smoke">
+        <p>&copy; <span id="year"></span> Infinite Clicks (Pty) Ltd. All rights reserved.</p>
+        <p>Built in Cape Town, South Africa.</p>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- About Section -->
-  <section id="about" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-12 md:mb-0">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6">About <span class="gradient-text">Infinite Clicks</span></h2>
-          <p class="text-gray-600 mb-8">
-            INFINITE CLICKS is a team of developers and designers passionate about turning ideas into scalable digital
-            products.
-            From startups to established enterprises, we craft solutions that accelerate growth and deliver exceptional
-            user experiences.
-          </p>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/scene.js"></script>
+  <script src="assets/js/interactions.js"></script>
+</body>
 
-          <div class="grid grid-cols-3 gap-4 max-w-md">
-            <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-              <div class="gradient-text text-3xl mb-2">
-                <i class="fas fa-lightbulb"></i>
-              </div>
-              <h4 class="font-bold">Innovation</h4>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-              <div class="gradient-text text-3xl mb-2">
-                <i class="fas fa-users"></i>
-              </div>
-              <h4 class="font-bold">Teamwork</h4>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-sm text-center">
-              <div class="gradient-text text-3xl mb-2">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <h4 class="font-bold">Results</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="md:w-1/2 md:pl-12">
-          <div class="bg-white p-8 rounded-xl shadow-md">
-            <h3 class="text-xl font-bold mb-4">Our Expertise</h3>
-            <div class="space-y-4">
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span class="font-medium">Web Development</span>
-                  <span class="text-blue-600">95%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                  <div class="gradient-bg h-2.5 rounded-full" style="width: 95%"></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span class="font-medium">Mobile Development</span>
-                  <span class="text-blue-600">90%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                  <div class="gradient-bg h-2.5 rounded-full" style="width: 90%"></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span class="font-medium">UI/UX Design</span>
-                  <span class="text-blue-600">92%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                  <div class="gradient-bg h-2.5 rounded-full" style="width: 92%"></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-1">
-                  <span class="font-medium">Backend Development</span>
-                  <span class="text-blue-600">88%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                  <div class="gradient-bg h-2.5 rounded-full" style="width: 88%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Build <span class="gradient-text">Something
-            Infinite</span></h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Get in touch with us to discuss your project and how we can help
-          bring your vision to life</p>
-      </div>
-
-      <div class="flex flex-col md:flex-row">
-        <div class="md:w-1/2 mb-12 md:mb-0 md:pr-8">
-          <form id="contact-form" class="space-y-6">
-            <div>
-              <label for="name" class="block text-gray-700 mb-2">Your Name</label>
-              <input type="text" id="name" name="name"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  required>
-            </div>
-
-            <div>
-              <label for="email" class="block text-gray-700 mb-2">Email Address</label>
-              <input type="email" id="email" name="email"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  required>
-            </div>
-
-            <div>
-              <label for="message" class="block text-gray-700 mb-2">Your Message</label>
-              <textarea id="message" name="message" rows="5"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  required></textarea>
-            </div>
-
-            <button type="submit" id="submit-btn"
-                class="gradient-bg text-white px-8 py-3 rounded-full font-medium w-full hover:shadow-lg transition flex items-center justify-center">
-              <span id="submit-text">Send Message</span>
-              <div id="submit-spinner" class="loading-spinner ml-2 hidden"></div>
-            </button>
-          </form>
-        </div>
-
-        <div class="md:w-1/2 md:pl-8">
-          <div class="bg-gray-50 p-8 rounded-xl h-full">
-            <h3 class="text-xl font-bold mb-6">Contact Information</h3>
-
-            <div class="space-y-6">
-              <div class="flex items-start">
-                <div class="gradient-text text-xl mr-4 mt-1">
-                  <i class="fas fa-envelope"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold text-gray-800">Email</h4>
-                  <a href="mailto:info@infiniteclicks.dev"
-                      class="text-gray-600 hover:text-blue-600 transition">info@infiniteclicks.dev</a>
-                </div>
-              </div>
-
-              <div class="flex items-start">
-                <div class="gradient-text text-xl mr-4 mt-1">
-                  <i class="fas fa-phone-alt"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold text-gray-800">Phone</h4>
-                  <a href="tel:+27001234567" class="text-gray-600 hover:text-blue-600 transition">+27 63 187 5397</a>
-                </div>
-              </div>
-
-              <div class="flex items-start">
-                <div class="
 </html>
